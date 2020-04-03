@@ -43,42 +43,46 @@ const questions = [
     secondAnswer: '나홀로 3주간 시베리아 횡단열차 타고 모스크바 행'
   }
 ];
+
+const searchLogic = [
+  { question: 'question1', firstAnswer: 'question2', secondAnswer: 'question3' },
+  { question: 'question2', firstAnswer: 'question4', secondAnswer: 'question5' },
+  { question: 'question3', firstAnswer: 'question6', secondAnswer: 'question7' },
+  { question: 'question4', firstAnswer: '1', secondAnswer: '2' },
+  { question: 'question5', firstAnswer: '3', secondAnswer: '4' },
+  { question: 'question6', firstAnswer: '5', secondAnswer: '6' },
+  { question: 'question7', firstAnswer: '7', secondAnswer: '8' }
+];
+
 const musicList = [
-  { id: 1, MusicURL: '#', MusicImg: '' },
-  { id: 2, MusicURL: '#', MusicImg: '' },
-  { id: 3, MusicURL: '#', MusicImg: '' },
-  { id: 4, MusicURL: '#', MusicImg: '' },
-  { id: 5, MusicURL: '#', MusicImg: '' },
-  { id: 6, MusicURL: '#', MusicImg: '' },
-  { id: 7, MusicURL: '#', MusicImg: '' },
-  { id: 8, MusicURL: '#', MusicImg: '' }];
+  { id: 1, name: '', MusicURL: '#', MusicImg: '#' },
+  { id: 2, name: '', MusicURL: '#', MusicImg: '#' },
+  { id: 3, name: '', MusicURL: '#', MusicImg: '#' },
+  { id: 4, name: '', MusicURL: '#', MusicImg: '#' },
+  { id: 5, name: '', MusicURL: '#', MusicImg: '#' },
+  { id: 6, name: '', MusicURL: '#', MusicImg: '#' },
+  { id: 7, name: '', MusicURL: '#', MusicImg: '#' },
+  { id: 8, name: '', MusicURL: '#', MusicImg: '#' }
+];
 
-const $questions = document.querySelector('questions');
-const $questionNum = document.querySelector('questionNum');
-const $firstAnswer = document.querySelector('firstAnswer');
-const $secondAnswer = document.querySelector('secondAnswer');
-const $answerList = document.querySelector('answerList');
+const $questions = document.querySelector('#questions');
+const $questionNum = document.querySelector('#questionNum');
+const $firstAnswer = document.querySelector('#firstAnswer');
+const $secondAnswer = document.querySelector('#secondAnswer');
+const $answerList = document.querySelector('#answerList');
+console.log(searchLogic[0]);
 
-questions[0];
-const startQ = questions[0];
-console.log(startQ.question);
-console.log(startQ.firstAnswer);
-console.log(startQ.secondAnswer);
-
-questions[1];
-const middleQ1 = questions[1];
-console.log(middleQ1.question);
-console.log(middleQ1.firstAnswer);
-console.log(middleQ1.secondAnswer);
+// console.log($firstAnswer.id);
 
 
+// questions[0];
+// const startQ = questions[0];
+// console.log(startQ.question);
+// console.log(startQ.firstAnswer);
+// console.log(startQ.secondAnswer);
 
-
-
-
-
-
-
-// const handleClick = () => console.log('질문');
-// $firstAnswer.addEventListener('click', handleClick);
-// $secondtAnswer.addEventListener('click', handleClick);
+// questions[1];
+// const middleQ1 = questions[1];
+// console.log(middleQ1.question);
+// console.log(middleQ1.firstAnswer);
+// console.log(middleQ1.secondAnswer);
