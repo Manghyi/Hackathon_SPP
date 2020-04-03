@@ -105,6 +105,15 @@ let nextQuestion = '';
 let musicPick = '';
 
 // 함수
+// 다음 질문으로
+function goNextQuestion(Num) {
+  $question.classList.remove(...$question.classList);
+  $question.classList.add(`question${Num + 1}`);
+  $question.textContent = question[Num].question;
+  $firstAnswer.textContent = question[Num].firstAnswer;
+  $secondAnswer.textContent = question[Num].secondAnswer;
+}
+
 // 해당 음악 선출
 function pickUpMusic() {
   searchLogic.forEach(logic => {
@@ -140,27 +149,30 @@ function musicPlayer() {
 }
 
 // 이벤트
+window.onload = () => {
+  goNextQuestion(0);
+};
+
 $reset.onclick = () => {
-  $question.classList.remove(...$question.classList);
-  $question.classList.add('question1');
-  $question.textContent = question[0].question;
-  $firstAnswer.textContent = question[0].firstAnswer;
-  $secondAnswer.textContent = question[0].secondAnswer;
+  goNextQuestion(0);
 };
 
 $answerList.onclick = e => {
   if (!e.target.matches('ul#answerList > li > button')) return;
   whatClick = e.target.id;
-  if (!$question.classList.contains('lastQuestion')) {
+  if ($question.classList.contains('lastQuestion')) {
+    pickUpMusic();
+    musicPlayer();
+  } else {
     searchLogic.forEach(logic => {
       if (logic.question === $question.classList[0]) {
         nextQuestion = logic[whatClick];
       }
     });
-    $question.classList.remove(...$question.classList);
-    $question.classList.add(nextQuestion);
-  } else {
-    pickUpMusic();
-    musicPlayer();
+    goNextQuestion(+nextQuestion.slice(-1) - 1);
+    switch (nextQuestion) {
+      case 'question4': case 'question5': case 'question6': case 'question7': $question.classList.add('lastQuestion');
+      // no default
+    }
   }
 };
