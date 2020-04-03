@@ -44,23 +44,27 @@ const question = [
   }
 ];
 const musicList = [
-  { id: 1, MusicURL: '#' },
-  { id: 2, MusicURL: '#' },
-  { id: 3, MusicURL: '#' },
-  { id: 4, MusicURL: '#' },
-  { id: 5, MusicURL: '#' },
-  { id: 6, MusicURL: '#' },
-  { id: 7, MusicURL: '#' },
-  { id: 8, MusicURL: '#' }];
+  { id: 1, MusicURL: '#', MusicImg: '' },
+  { id: 2, MusicURL: '#', MusicImg: '' },
+  { id: 3, MusicURL: '#', MusicImg: '' },
+  { id: 4, MusicURL: '#', MusicImg: '' },
+  { id: 5, MusicURL: '#', MusicImg: '' },
+  { id: 6, MusicURL: '#', MusicImg: '' },
+  { id: 7, MusicURL: '#', MusicImg: '' },
+  { id: 8, MusicURL: '#', MusicImg: '' }];
 const $question = document.querySelector('#question');
 const $answerNum = document.querySelector('#answerNum');
-const musicPick = '';
+let musicPick = '';
+let musicImg = '';
 
 // 함수
 // 해당 음악 선출
 function pickUpMusic() {
   musicList.forEach(music => {
-    musicPick = 
+    if ($question.classList.contains(music.id)) {
+      musicPick = music.MusicURL;
+      musicImg = music.MusicImg;
+    }
   });
 }
 
