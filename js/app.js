@@ -14,7 +14,7 @@ const question = [
   },
   {
     id: 3,
-    question: '중간 잘문. 당신 옆에 앉아 있는 그 사람에게서 봄내음을 맡을 수 있나요?',
+    question: '중간 질문. 당신 옆에 앉아 있는 그 사람에게서 봄내음을 맡을 수 있나요?',
     firstAnswer: 'YES',
     secondAnswer: 'NEVER'
   },
@@ -101,12 +101,12 @@ const $answerList = document.querySelector('#answerList');
 const $firstAnswer = document.querySelector('#firstAnswer');
 const $secondAnswer = document.querySelector('#secondAnswer');
 let whatClick = '';
+let nextQuestion = '';
 let musicPick = '';
 
 // 함수
 // 해당 음악 선출
 function pickUpMusic() {
-  console.log(searchLogic[0][whatClick]);
   searchLogic.forEach(logic => {
     if ($question.classList[0] === logic.question) musicPick = +logic[whatClick] - 1;
   });
@@ -139,7 +139,6 @@ function musicPlayer() {
   };
 }
 
-
 // 이벤트
 $reset.onclick = () => {
   $question.classList.remove(...$question.classList);
@@ -150,9 +149,18 @@ $reset.onclick = () => {
 };
 
 $answerList.onclick = e => {
+  if (!e.target.matches('ul#answerList > li > button')) return;
   whatClick = e.target.id;
-  console.log(whatClick);
-  if (!e.target.matches('ul#answerList > li > button') || !$question.classList.contains('lastQuestion')) return;
-  pickUpMusic();
-  musicPlayer();
+  if (!$question.classList.contains('lastQuestion')) {
+    searchLogic.forEach(logic => {
+      if (logic.question === $question.classList[0]) {
+        nextQuestion = logic[whatClick];
+      }
+    });
+    $question.classList.remove(...$question.classList);
+    $question.classList.add(nextQuestion);
+  } else {
+    pickUpMusic();
+    musicPlayer();
+  }
 };
