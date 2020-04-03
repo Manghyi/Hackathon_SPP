@@ -1,5 +1,5 @@
 // 상태
-const questions = [
+const question = [
   {
     id: 1,
     question: '시작 질문. 어디에서 휴식을 취하고 싶으세요?',
@@ -95,8 +95,11 @@ const musicList = [
   }
 ];
 
+const $reset = document.querySelector('#reset');
 const $question = document.querySelector('#question');
 const $answerList = document.querySelector('#answerList');
+const $firstAnswer = document.querySelector('#firstAnswer');
+const $secondAnswer = document.querySelector('#secondAnswer');
 let whatClick = '';
 let musicPick = '';
 
@@ -128,6 +131,15 @@ function musicPlayer() {
 
 
 // 이벤트
+$reset.onclick = (e) => {
+  const $question = document.querySelector('#question');
+  $question.classList.remove(...$question.classList);
+  $question.classList.add('question1');
+  $question.textContent = question[0].question;
+  $firstAnswer.textContent = question[0].firstAnswer;
+  $secondAnswer.textContent = question[0].secondAnswer;
+};
+
 $answerList.onclick = e => {
   whatClick = e.target.id;
   console.log(whatClick);
