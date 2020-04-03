@@ -1,5 +1,5 @@
 // 상태
-const questions = [
+const question = [
   {
     id: 1,
     question: '시작 질문. 어디에서 휴식을 취하고 싶으세요?',
@@ -44,61 +44,16 @@ const questions = [
   }
 ];
 
-const searchLogic = [
-  { question: 'question1', firstAnswer: 'question2', secondAnswer: 'question3' },
-  { question: 'question2', firstAnswer: 'question4', secondAnswer: 'question5' },
-  { question: 'question3', firstAnswer: 'question6', secondAnswer: 'question7' },
-  { question: 'question4', firstAnswer: '1', secondAnswer: '2' },
-  { question: 'question5', firstAnswer: '3', secondAnswer: '4' },
-  { question: 'question6', firstAnswer: '5', secondAnswer: '6' },
-  { question: 'question7', firstAnswer: '7', secondAnswer: '8' }
-];
+const $reset = document.querySelector('#reset');
+const $firstAnswer = document.querySelector('#firstAnswer');
+const $secondAnswer = document.querySelector('#secondAnswer');
 
-const musicList = [
-  { id: 1, name: '', MusicURL: '#', MusicImg: '#' },
-  { id: 2, name: '', MusicURL: '#', MusicImg: '#' },
-  { id: 3, name: '', MusicURL: '#', MusicImg: '#' },
-  { id: 4, name: '', MusicURL: '#', MusicImg: '#' },
-  { id: 5, name: '', MusicURL: '#', MusicImg: '#' },
-  { id: 6, name: '', MusicURL: '#', MusicImg: '#' },
-  { id: 7, name: '', MusicURL: '#', MusicImg: '#' },
-  { id: 8, name: '', MusicURL: '#', MusicImg: '#' }
-];
+$reset.onclick = (e) => {
+  const $question = document.querySelector('#question');
+  $question.classList.remove(...$question.classList);
+  $question.classList.add('question1');
 
-const $question = document.querySelector('#question');
-const $answerList = document.querySelector('#answerList');
-let whatClick = '';
-let musicPick = '';
-
-// 함수
-// 해당 음악 선출
-function pickUpMusic() {
-  searchLogic.forEach(logic => {
-    if ($question.classList[0] === logic.question) musicPick = +logic[whatClick] -1;
-  });
-}
-
-// 뮤직 플레이어로 변환
-function musicPlayer() {
-  const $musicPlayer = document.createElement('button');
-  $musicPlayer.textContent = '일시정지';
-  $answerList.parentNode.replaceChild($musicPlayer, $answerList);
-  
-  const $album = document.createElement('div');
-  $album.id = 'album';
-  console.log(musicPick);
-  $album.innerHTML = `<img src ="${musicList[musicPick].MusicImg}" alt="${musicList[musicPick].name}">`;
-  $question.parentNode.replaceChild($album, $question);
-  
-  // const $musicElement = new Audio(musicList[+musicPick - 1].MusicURL);
-  // $musicElement.play();
-}
-
-
-// 이벤트
-$answerList.onclick = e => {
-  whatClick = e.target.id;
-  if (!e.target.matches('ul#answerList > li > button') || !$question.classList.contains('lastQuestion')) return;
-  pickUpMusic();
-  musicPlayer();
+  $question.textContent = question[0].question;
+  $firstAnswer.textContent = question[0].firstAnswer;
+  $secondAnswer.textContent = question[0].secondAnswer;
 };
