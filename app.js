@@ -42,3 +42,13 @@ const question = [
     secondAnswer: '나홀로 3주간 시베리아 횡단열차 타고 모스크바 행'
   }
 ];
+
+const $reset = document.querySelector('.reset');
+const $numOne = document.querySelector('.numOne');
+const $numTwo = document.querySelector('.numTwo');
+
+$reset.onclick = (e) => {
+  const $buttons = querySelectorAll('button');
+  if($div.id !== '') 
+  
+}
