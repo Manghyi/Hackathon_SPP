@@ -1,3 +1,4 @@
+// 상태
 const question = [
   {
     id: 1,
