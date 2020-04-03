@@ -121,18 +121,27 @@ function musicPlayer() {
   // 앨범 이미지
   const $album = document.createElement('div');
   $album.id = 'album';
-  console.log(musicPick);
   $album.innerHTML = `<img src ="${musicList[musicPick].MusicImg}" alt="${musicList[musicPick].name}">`;
   $question.parentNode.replaceChild($album, $question);
   // 음원 재생
-  // const $musicElement = new Audio(musicList[+musicPick - 1].MusicURL);
-  // $musicElement.play();
+  const $musicElement = new Audio(musicList[musicPick].MusicURL);
+  $musicElement.play();
+
+  $musicPlayer.onclick = () => {
+    if ($musicPlayer.classList.contains('pause')) {
+      $musicPlayer.textContent = '일시정지';
+      $musicElement.paly();
+    } else {
+      $musicPlayer.textContent = '재생';
+      $musicElement.pause();
+    }
+    $musicPlayer.classList.toggle('pause');
+  };
 }
 
 
 // 이벤트
-$reset.onclick = (e) => {
-  const $question = document.querySelector('#question');
+$reset.onclick = () => {
   $question.classList.remove(...$question.classList);
   $question.classList.add('question1');
   $question.textContent = question[0].question;
