@@ -131,8 +131,7 @@ function musicPlayer() {
 
 
 // 이벤트
-$reset.onclick = (e) => {
-  const $question = document.querySelector('#question');
+$reset.onclick = () => {
   $question.classList.remove(...$question.classList);
   $question.classList.add('question1');
   $question.textContent = question[0].question;
