@@ -1,3 +1,4 @@
+// 상태
 const question = [
   {
     id: 1,
@@ -42,3 +43,35 @@ const question = [
     secondAnswer: '나홀로 3주간 시베리아 횡단열차 타고 모스크바 행'
   }
 ];
+const musicList = [
+  { id: 1, MusicURL: '#' },
+  { id: 2, MusicURL: '#' },
+  { id: 3, MusicURL: '#' },
+  { id: 4, MusicURL: '#' },
+  { id: 5, MusicURL: '#' },
+  { id: 6, MusicURL: '#' },
+  { id: 7, MusicURL: '#' },
+  { id: 8, MusicURL: '#' }];
+const $question = document.querySelector('#question');
+const $answerNum = document.querySelector('#answerNum');
+const musicPick = '';
+
+// 함수
+// 해당 음악 선출
+function pickUpMusic() {
+  musicList.forEach(music => {
+    musicPick = 
+  });
+}
+
+// 뮤직 플레이어로 변환
+function musicPlayer() {
+  $question.innerHTML = '';
+}
+
+// 이벤트
+$answerNum.onclick = e => {
+  if (!e.target.matches('ul#answerNum > li > button') || !$question.classList.contains === 'lastQuestion') return;
+  pickUpMusic();
+  musicPlayer();
+};
