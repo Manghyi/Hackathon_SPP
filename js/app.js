@@ -43,39 +43,12 @@ const question = [
     secondAnswer: '나홀로 3주간 시베리아 횡단열차 타고 모스크바 행'
   }
 ];
-const musicList = [
-  { id: 1, MusicURL: '#', MusicImg: '' },
-  { id: 2, MusicURL: '#', MusicImg: '' },
-  { id: 3, MusicURL: '#', MusicImg: '' },
-  { id: 4, MusicURL: '#', MusicImg: '' },
-  { id: 5, MusicURL: '#', MusicImg: '' },
-  { id: 6, MusicURL: '#', MusicImg: '' },
-  { id: 7, MusicURL: '#', MusicImg: '' },
-  { id: 8, MusicURL: '#', MusicImg: '' }];
-const $question = document.querySelector('#question');
-const $answerNum = document.querySelector('#answerNum');
-let musicPick = '';
-let musicImg = '';
 
-// 함수
-// 해당 음악 선출
-function pickUpMusic() {
-  musicList.forEach(music => {
-    if ($question.classList.contains(music.id)) {
-      musicPick = music.MusicURL;
-      musicImg = music.MusicImg;
-    }
-  });
-}
+const $reset = document.querySelector('.reset');
+const $numOne = document.querySelector('.numOne');
+const $numTwo = document.querySelector('.numTwo');
 
-// 뮤직 플레이어로 변환
-function musicPlayer() {
-  $question.innerHTML = '';
-}
-
-// 이벤트
-$answerNum.onclick = e => {
-  if (!e.target.matches('ul#answerNum > li > button') || !$question.classList.contains === 'lastQuestion') return;
-  pickUpMusic();
-  musicPlayer();
+$reset.onclick = (e) => {
+  const $buttons = querySelectorAll('button');
+  if ($div.id !== '') { };
 };
