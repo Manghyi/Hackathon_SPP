@@ -50,6 +50,5 @@ const $numTwo = document.querySelector('.numTwo');
 
 $reset.onclick = (e) => {
   const $buttons = querySelectorAll('button');
-  if($div.id !== '') 
-  
-}
+  if ($div.id !== '') { };
+};
