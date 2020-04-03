@@ -1,3 +1,4 @@
+// 상태
 const questions = [
   {
     id: 1,
@@ -50,6 +51,15 @@ const questions = [
 //     fristAnswer: '잘 손질된 잔디밭 위에서',
 //     secondAnswer: '들꽃이 가득 핀 오솔길에서'
 //   }
-const resultId1 = questions.find(question => question.id === 1);
-console.log(resultId1);
-const resultId1 = 
+const $questions = document.querySelector('questions');
+const $answerNum = document.querySelector('answerNum');
+const $numOne = document.querySelector('numOne');
+const $numTwo = document.querySelector('numTwo');
+
+
+$numOne.addEventListener('click', function () {
+  return $questions.filter(question =>
+    question.id)
+});
+
+
