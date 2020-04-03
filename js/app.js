@@ -96,10 +96,12 @@ const musicList = [
 ];
 
 const $reset = document.querySelector('#reset');
-const $question = document.querySelector('#question');
+const $div = document.querySelector('main > div');
 const $answerList = document.querySelector('#answerList');
 const $firstAnswer = document.querySelector('#firstAnswer');
 const $secondAnswer = document.querySelector('#secondAnswer');
+const resetList = [$div, $answerList];
+let $musicElement;
 let whatClick = '';
 let nextQuestion = '';
 let musicPick = '';
@@ -107,9 +109,9 @@ let musicPick = '';
 // 함수
 // 다음 질문으로
 function goNextQuestion(Num) {
-  $question.classList.remove(...$question.classList);
-  $question.classList.add(`question${Num + 1}`);
-  $question.textContent = question[Num].question;
+  $div.classList.remove(...$div.classList);
+  $div.classList.add(`question${Num + 1}`);
+  $div.textContent = question[Num].question;
   $firstAnswer.textContent = question[Num].firstAnswer;
   $secondAnswer.textContent = question[Num].secondAnswer;
 }
@@ -117,7 +119,7 @@ function goNextQuestion(Num) {
 // 해당 음악 선출
 function pickUpMusic() {
   searchLogic.forEach(logic => {
-    if ($question.classList[0] === logic.question) musicPick = +logic[whatClick] - 1;
+    if ($div.classList[0] === logic.question) musicPick = +logic[whatClick] - 1;
   });
 }
 
@@ -131,9 +133,9 @@ function musicPlayer() {
   const $album = document.createElement('div');
   $album.id = 'album';
   $album.innerHTML = `<img src ="${musicList[musicPick].MusicImg}" alt="${musicList[musicPick].name}">`;
-  $question.parentNode.replaceChild($album, $question);
+  $div.parentNode.replaceChild($album, $div);
   // 음원 재생
-  const $musicElement = new Audio(musicList[musicPick].MusicURL);
+  $musicElement = new Audio(musicList[musicPick].MusicURL);
   $musicElement.play();
 
   $musicPlayer.onclick = () => {
@@ -154,24 +156,29 @@ window.onload = () => {
 };
 
 $reset.onclick = () => {
+  const $resetDiv = document.querySelector('main > div');
+  if ($resetDiv.id === 'question') goNextQuestion(0);
+  $resetDiv.parentNode.replaceChild(resetList[1], $resetDiv.nextElementSibling);
+  $resetDiv.parentNode.replaceChild(resetList[0], $resetDiv);
   goNextQuestion(0);
+  $musicElement.pause(0);
 };
 
 $answerList.onclick = e => {
   if (!e.target.matches('ul#answerList > li > button')) return;
   whatClick = e.target.id;
-  if ($question.classList.contains('lastQuestion')) {
+  if ($div.classList.contains('lastQuestion')) {
     pickUpMusic();
     musicPlayer();
   } else {
     searchLogic.forEach(logic => {
-      if (logic.question === $question.classList[0]) {
+      if (logic.question === $div.classList[0]) {
         nextQuestion = logic[whatClick];
       }
     });
     goNextQuestion(+nextQuestion.slice(-1) - 1);
     switch (nextQuestion) {
-      case 'question4': case 'question5': case 'question6': case 'question7': $question.classList.add('lastQuestion');
+      case 'question4': case 'question5': case 'question6': case 'question7': $div.classList.add('lastQuestion');
       // no default
     }
   }
