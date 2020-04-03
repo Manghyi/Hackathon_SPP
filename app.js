@@ -1,4 +1,4 @@
-const question = [
+const questions = [
   {
     id: 1,
     question: '시작 질문. 어디에서 휴식을 취하고 싶으세요?',
@@ -13,7 +13,7 @@ const question = [
   },
   {
     id: 3,
-    question: '중간 잘문. 당신 옆에 앉아 있는 그 사람에게서 봄내음을 맡을 수 있나요?',
+    question: '중간 질문. 당신 옆에 앉아 있는 그 사람에게서 봄내음을 맡을 수 있나요?',
     fristAnswer: 'YES',
     secondAnswer: 'NEVER'
   },
@@ -42,3 +42,14 @@ const question = [
     secondAnswer: '나홀로 3주간 시베리아 횡단열차 타고 모스크바 행'
   }
 ];
+
+// const questions = [
+//   {
+//     id: 1,
+//     question: '시작 질문. 어디에서 휴식을 취하고 싶으세요?',
+//     fristAnswer: '잘 손질된 잔디밭 위에서',
+//     secondAnswer: '들꽃이 가득 핀 오솔길에서'
+//   }
+const resultId1 = questions.find(question => question.id === 1);
+console.log(resultId1);
+const resultId1 = 
