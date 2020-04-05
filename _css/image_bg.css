@@ -1,101 +1,88 @@
+body * {
+  box-sizing: border-box;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 1);
+}
+
+body {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) ,url(../_source/img/bgi.jpg) no-repeat center center/100%;
+}
+
 #logo {
  margin: 0;
  padding: 0;
 }
 
 #reset {
-  width: 72px;
-  height: 72px;
-  margin-top: 35px;
-  margin-left: 50px;
-  color: #306108;
-  font-size: 24px;
-  font-family: fantasy;
+  margin-top: 3.5rem;
+  margin-left: 5rem;
+  width: 7.2rem;
+  height: 7.2rem;
   box-shadow: 0px 0px 20px 10px #f2fadc;
-  cursor: pointer;
-  border-style: ridge;
   border-radius: 100%;
-  transition: background-color .4s;
-  background-image: url();
+  border-style: ridge;
   background-color: #ced9bf;
+  color: #306108;
+  font-family: fantasy;
+  font-size: 2.4rem;
+  transition: background-color .4s;
+  cursor: pointer;
 }
 
 #reset:hover {
   background-color: gold;
 }
 
+main {
+  margin: 0 auto;
+  width: 60%;
+  max-width: 102.4rem;
+}
+
 #question, #album {
-  padding: 250px;
-  bottom: 185px;
-  left: 255px;
-  font-size: 30px;
+  margin: 0;
+  border: 1px solid #b2b8ad;
+  box-shadow: 0px 0px 15px 5px #f2fadc;
+  border-radius: 5px;
+  background-color: beige;
+  font-size: 3rem;
+}
+
+#question {
+  padding: 11rem 2rem 2rem 2rem;
 }
 
 #answerList, main>button {
-  position: absolute;
-  bottom: 100px;
-  left: 220px;
-  font-size: 30px;
+  width: 100%;
+  margin: 1.5rem 0 0 0;
+  font-size: 3rem;
+}
+
+#answerList {
+  padding: 0;
   list-style-type: none;
 }
 
-#firstAnswer {
-  font-size: 18px;
-  border-radius: 5px;
+#firstAnswer, #secondAnswer, main > button, .pause{
   border: 1px solid #b2b8ad;
-  cursor: pointer;
   box-shadow: 0px 0px 15px 5px #f2fadc;
-  transition: background-color .4s;
-  background-color: beige;
-}
-
-#firstAnswer:hover {
-  background-color: #92b879;
-}
-
-#secondAnswer {
-  font-size: 18px;
   border-radius: 5px;
-  border: 1px solid #b2b8ad;
-  cursor: pointer;
-  box-shadow: 0px 0px 20px 5px #f2fadc;
-  transition: background-color .4s;
   background-color: beige;
+  font-size: 1.8rem;
+  transition: background-color .4s;
+  cursor: pointer;
 }
 
-#secondAnswer:hover {
+#firstAnswer, #secondAnswer {
+  margin: 0 0 1rem;
+  width: 100%;
+}
+
+#firstAnswer:hover, #secondAnswer:hover, main > button:hover, .pause:hover {
   background-color: #92b879;
 }
 
 #album > img {
-  width: 75%;
-}
-
-main>button {
-  font-size: 18px;
-  border-radius: 5px;
-  border: 1px solid #b2b8ad;
-  cursor: pointer;
-  box-shadow: 0px 0px 20px 5px #f2fadc;
-  transition: background-color .4s;
-  background-color: beige;
-}
-
-main>button {
-  background-color: #92b879;
-}
-
-.pause {
-  font-size: 18px;
-  border-radius: 5px;
-  border: 1px solid #b2b8ad;
-  cursor: pointer;
-  box-shadow: 0px 0px 20px 5px #f2fadc;
-  transition: background-color .4s;
-  background-color: beige;
-}
-
-.pause:hover {
-  background-color: #92b879;
+  width: 100%;
 }
 
