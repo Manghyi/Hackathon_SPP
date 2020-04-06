@@ -70,28 +70,28 @@ const searchLogic = [
 
 const musicList = [
   {
-    id: 1, name: '음악1', MusicURL: '_source/music/결혼행진곡.mp3', MusicImg: '_source/img/결혼 행진곡.jpg'
+    id: 1, name: '음악1', MusicURL: 'source/music/결혼행진곡.mp3', MusicImg: 'source/img/결혼 행진곡.jpg'
   },
   {
-    id: 2, name: '음악2', MusicURL: '_source/music/바흐.무반주첼로.mp3', MusicImg: '_source/img/바흐 무반주첼로.jpg'
+    id: 2, name: '음악2', MusicURL: 'source/music/바흐.무반주첼로.mp3', MusicImg: 'source/img/바흐 무반주첼로.jpg'
   },
   {
-    id: 3, name: '음악3', MusicURL: '_source/music/Glenn Gould - 01 (mp3cut.net).mp3', MusicImg: '_source/img/봄이좋냐.jpg'
+    id: 3, name: '음악3', MusicURL: 'source/music/Glenn Gould - 01 (mp3cut.net).mp3', MusicImg: 'source/img/봄이좋냐.jpg'
   },
   {
-    id: 4, name: '음악4', MusicURL: '_source/music/04 (비발디.플루트협주곡).wav', MusicImg: '_source/img/비발디.jpg'
+    id: 4, name: '음악4', MusicURL: 'source/music/04 (비발디.플루트협주곡).wav', MusicImg: 'source/img/비발디.jpg'
   },
   {
-    id: 5, name: '음악5', MusicURL: '_source/music/CD1-1  (운명).mp3', MusicImg: '_source/img/운명.jpg'
+    id: 5, name: '음악5', MusicURL: 'source/music/CD1-1  (운명).mp3', MusicImg: 'source/img/운명.jpg'
   },
   {
-    id: 6, name: '음악6', MusicURL: '_source/music/CD1-2  (합창).mp3', MusicImg: '_source/img/합창.jpg'
+    id: 6, name: '음악6', MusicURL: 'source/music/CD1-2  (합창).mp3', MusicImg: 'source/img/합창.jpg'
   },
   {
-    id: 7, name: '음악7', MusicURL: '_source/music/베토벤.전원.wav', MusicImg: '_source/img/베토벤-전원.jpg'
+    id: 7, name: '음악7', MusicURL: 'source/music/베토벤.전원.wav', MusicImg: 'source/img/베토벤-전원.jpg'
   },
   {
-    id: 8, name: '음악8', MusicURL: '_source/music/08-Sarasate-Zigeunerweisen_op20-Odnoposoff1955사라사테.mp3', MusicImg: '_source/img/사라사테.jpg'
+    id: 8, name: '음악8', MusicURL: 'source/music/08-Sarasate-Zigeunerweisen_op20-Odnoposoff1955사라사테.mp3', MusicImg: 'source/img/사라사테.jpg'
   }
 ];
 

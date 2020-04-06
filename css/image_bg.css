@@ -5,7 +5,7 @@ body * {
 }
 
 body {
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) ,url(../_source/img/bgi.jpg) no-repeat center center/100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)) ,url(../source/img/bgi.jpg) no-repeat center center/100%;
 }
 
 #logo {
